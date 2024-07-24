@@ -79,7 +79,7 @@ h6{
 }
 
 #home{
-    background-image: url(../images/background.jpg);
+    background-image: url(../images/background.webp);
     background-size: cover;
     width: 100%;
     height: 100vh;
@@ -149,4 +149,48 @@ button:hover{
     transition: 0.4s ease;
     opacity: 0.8;
     background-color: #000;
+    width: 100%;
+    height: 100%;
+}
+
+#new .one .details:hover{
+    background-color: cornsilk;
+    color: #553e3e;
+}
+
+#new .one:nth-child(1) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+    padding-left: 2%;
+}
+
+#new .one:nth-child(2) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#new .one:nth-child(3) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+    padding-right: 2%;
+}
+
+.home-actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    padding-right: 10%;
+    /* margin-right: auto; */
+    /* margin-left: auto; */
 }
