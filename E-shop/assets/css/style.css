@@ -92,7 +92,8 @@ h6{
     color: #D8D8D8;
 }
 
-#home span{
+#home span, 
+#featured div div span{
     color: coral;
 }
 
@@ -194,3 +195,59 @@ button:hover{
     /* margin-right: auto; */
     /* margin-left: auto; */
 }
+
+/* .star i{
+    font-size: 1rem;
+}
+
+.star i:hover{
+    color: goldenrod;
+}
+
+.star{
+    padding: 10px 0;
+} */
+
+.star {
+    display: inline-block;
+}
+.star i {
+    color: gray;
+}
+
+.star i.active {
+    color: goldenrod;
+}
+
+.product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.product img{
+    transition: 0.5s all;
+}
+
+.product:hover img{
+    opacity: 0.7;
+}
+
+.product .buy-btn{
+    background-color: #fb774b;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.3s all;
+}
+
+.product:hover .buy-btn{
+    transform: translateY(0px);
+    opacity: 0.9;
+}
+
+hr{
+    width: 10vw;
+    height: 3px !important;
+    opacity: 1 !important;
+    background-color: #fb774b;
+}
+
