@@ -97,16 +97,36 @@ h6{
     color: coral;
 }
 
+#retro div div span{
+    font-weight: 900;
+}
+
+#retro div :nth-child(1) span{
+    color: blue;
+}
+
+#retro div :nth-child(2) span{
+    color: red;
+}
+
+#retro div :nth-child(3) span{
+    color: rebeccapurple;
+}
+
+
 #banner{
     background-image: url(../images/banner.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 80px;
+    background-attachment: fixed;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
     color: #D8D8D8;
 }
 
@@ -209,6 +229,17 @@ button:hover{
     /* margin-left: auto; */
 }
 
+.banner-actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 10%;
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+}
+
 .star{
     display: inline-block;
     padding: 10px 0;
@@ -247,6 +278,36 @@ button:hover{
     opacity: 0.9;
 }
 
+.retro-kit{
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.retro-kit .buy-btn{
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.3s all;
+
+}
+
+.retro-kit:hover .buy-btn{
+    transform: translateY(0px);
+    opacity: 0.9;
+}
+
+#retro div :nth-child(1) .buy-btn{
+    background-color: blue;
+} 
+
+#retro div :nth-child(2) .buy-btn{
+    background-color: red;
+} 
+
+#retro div :nth-child(3) .buy-btn{
+    background-color: rebeccapurple;
+} 
+
+
 hr{
     width: 10vw;
     height: 3px !important;
@@ -254,3 +315,15 @@ hr{
     background-color: #fb774b;
 }
 
+.bg-black{
+    background-color: #000;
+}
+
+
+.flex{
+    display: flex;
+}
+
+footer{
+    flex-direction: column;
+}
