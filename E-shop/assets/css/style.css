@@ -81,10 +81,9 @@ h6{
 #home{
     background-image: url(../images/background.webp);
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
-    background-position-x: 80px;
-    background-position-y: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,8 +92,22 @@ h6{
 }
 
 #home span, 
-#featured div div span{
+#featured div div span, 
+#banner span{
     color: coral;
+}
+
+#banner{
+    background-image: url(../images/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #D8D8D8;
 }
 
 button{
@@ -196,21 +209,11 @@ button:hover{
     /* margin-left: auto; */
 }
 
-/* .star i{
-    font-size: 1rem;
-}
-
-.star i:hover{
-    color: goldenrod;
-}
-
 .star{
-    padding: 10px 0;
-} */
-
-.star {
     display: inline-block;
-}
+    padding: 10px 0;
+} 
+
 .star i {
     color: gray;
 }
