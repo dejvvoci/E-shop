@@ -46,7 +46,7 @@ h6{
 
 
 .nav-buttons{
-    margin-left: 65%;
+    margin-left: 55%;
 }
 
 .navbar{
@@ -55,6 +55,7 @@ h6{
     padding-bottom: 2rem !important;
     top: 0;
     left: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -326,4 +327,36 @@ hr{
 
 footer{
     flex-direction: column;
+}
+
+.navbar .brandName{
+    color: rgb(38, 74, 107);
+    margin: 3px 5px;
+    font-size: 1.5rem;
+}
+
+.small-image-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-image-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.single-product input:focus{
+    outline: none;
+}
+
+.single-product .buy-btn{
+    
 }
