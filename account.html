@@ -2,7 +2,7 @@
 <html lang="">
   <head>
     <meta charset="utf-8">
-    <title>Cart</title>
+    <title>Account</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="E-shop/assets/css/style.css">
@@ -42,106 +42,71 @@
       </div>
     </nav>
 
-    <!-- Cart products -->
-     <section class="cart container my-5 py-5">
-      <div class="container mt-5">
-        <h2 class="font-weight-bold">Your cart</h2>
-        <hr>
-      </div>
-      <table class="mt-5 pt-5">
-        <tr>
-          <th>Product</th>
-          <th>Quantity</th>
-          <th>Price</th>
-        </tr>
-        <tr>
-          <td>
-            <div class="product-info">
-              <img src="E-shop/assets/images/featured/ball.webp" alt="">
-              <div>
-                <p>Ball</p>
-                <small><span>$</span>150</small>
-                <br>
-                <a class="remve-button" href="#">Remove</a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <input type="number" value="1">
-            <a class="edit-button" href="#">Edit</a>
-          </td>
-          <td>
-            <span>$</span>
-            <span class="product-price">150</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="product-info">
-              <img src="E-shop/assets/images/featured/ball.webp" alt="">
-              <div>
-                <p>Ball</p>
-                <small><span>$</span>150</small>
-                <br>
-                <a class="remve-button" href="#">Remove</a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <input type="number" value="1">
-            <a class="edit-button" href="#">Edit</a>
-          </td>
-          <td>
-            <span>$</span>
-            <span class="product-price">150</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="product-info">
-              <img src="E-shop/assets/images/featured/ball.webp" alt="">
-              <div>
-                <p>Ball</p>
-                <small><span>$</span>150</small>
-                <br>
-                <a class="remve-button" href="#">Remove</a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <input type="number" value="1">
-            <a class="edit-button" href="#">Edit</a>
-          </td>
-          <td>
-            <span>$</span>
-            <span class="product-price">150</span>
-          </td>
-        </tr>
-      </table>
+    <!-- Account -->
+    <section class="my-5 py-5">
+       <div class="row container mx-auto">
+           <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
+                <h3 class="font-weight-bold">Account info</h3>
+                <hr class="mx-auto ">
+                <div class="account-info">
+                    <p>Name <span>Dejvi</span></p>
+                    <p>Email <span>dejvvoci@gmail.com</span></p>
+                    <p><a href="#" id="orders-button">Your orders</a></p>
+                    <p><a href="#" id="logout-button">Logout</a></p>
+                </div>
+           </div>
 
-      <!-- Total table -->
-       <div class="cart-total">
-        <table>
-          <tr>
-            <td>Subtotal</td>
-            <td>$450</td>
-          </tr>
-          <tr>
-            <td>Total</td>
-            <td>$450</td>
-          </tr>
-        </table>
+           <div class="col-lg-6 col-md-12 col-sm-12 mt-3 pt-5">
+              <form id="account-form" action="">
+                <h3>Change password</h3>
+                <hr class="mx-auto">
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="account-password" class="form-control" placeholder="Password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="account-confirm-password" class="form-control" placeholder="Password" name="confirm-password" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Change Password" class="btn" id="change-account-password">
+                </div>
+              </form>
+           </div>
        </div>
+    </section>
 
-       <!-- Checkout button -->
-       <div class="checkout-container">
-        <button class="button checkout-button">Checkout</button>
-       </div>
-      </section>
+    <!-- Orders -->
+         <section class="orders container my-5 py-3">
+            <div class="container mt-2">
+              <h2 class="font-weight-bold text-center">Your orders</h2>
+              <hr class="mx-auto">
+            </div>
+            <table class="mt-5 pt-5">
+              <tr>
+                <th>Product</th>
+                <th>Date</th>
+              </tr>
+              <tr>
+                <td>
+                    <div class="product-info">
+                        <img src="E-shop/assets/images/featured/ball.webp" alt="">
+                        <div>
+                            <p class="mt-3">Ball</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span>20/08/2025</span>
+                </td>
+              </tr>
+             
+            </table>
+      
+            </section>
 
-     
-    
-    <!-- Footer -->
+
+        <!-- Footer -->
     <!-- Remove the container if you want to extend the Footer to full width. -->
 
     <footer class="bg-black text-white text-lg-start">
