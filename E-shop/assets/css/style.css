@@ -537,3 +537,26 @@ th:last-child{
     height: 80px;
     margin-right: 10px;
 }
+
+/* checkout */
+
+#checkout-form .checkout-small-element{
+    display: inline-block;
+    width: 48%;
+    margin: 10px auto;
+}
+
+#checkout-form .checkout-large-element{
+    width: 96%;
+}
+
+#checkout-form .checkout-button-container{
+    margin: 10px;
+    margin-right: 40px;
+    text-align: right;
+}
+
+#checkout-form #checkout-btn{
+    color: white;
+    background-color: coral;
+}
