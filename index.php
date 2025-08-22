@@ -100,8 +100,13 @@
           <p>Here you can <span class="fw-bold">check out</span> our new products</p>
         </div>
         <div class="row mx-auto container-fluid">
+
+        <?php include('E-shop/server/get_featured_products.php'); ?>
+
+        <?php while($row=$featured_products->fetch_assoc()){ ?>
+
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img src="E-shop/assets/images/featured/feature1.avif" class="img-fluid mb-3" alt="FOTO">
+            <img src="E-shop/assets/images/featured/<?php echo $row['product_image'] ?>" class="img-fluid mb-3" alt="FOTO">
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -109,53 +114,13 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <h4 class="p-name">TN Football boots</h4>
-            <span>LIMITED EDITION</span>
-            <h4 class="p-price">455.95$</h4>
+            <h4 class="p-name"><?php echo $row['product_name'] ?></h4>
+            <!-- <span>LIMITED EDITION<?php ?></span> -->
+            <h4 class="p-price">455.95$<?php echo $row['product-price'] ?></h4>
             <button class="buy-btn">Buy Now</button>
           </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img src="E-shop/assets/images/featured/ball.webp" class="img-fluid mb-3" alt="FOTO">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4 class="p-name">Adisa RIHLA</h4>
-            <span>WORLD CUP 2022 Ball</span>
-            <h4 class="p-price">129.95$</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img src="E-shop/assets/images/featured/gloves.jpg" class="img-fluid mb-3" alt="FOTO">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4 class="p-name">KODAA Gloves</h4>
-            <span>SAVE LIKE NEUER</span>
-            <h4 class="p-price">75.95$</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img src="E-shop/assets/images/featured/captain.jpg" class="img-fluid mb-3" alt="FOTO">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4 class="p-name">PATIKIL Captain armband</h4>
-            <span>CAPTAIN AS ZANETTI</span>
-            <h4 class="p-price">19.95$</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+          
+          <?php } ?>
         </div>
       </section>
 
