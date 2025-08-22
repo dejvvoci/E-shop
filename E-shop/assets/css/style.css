@@ -560,3 +560,9 @@ th:last-child{
     color: white;
     background-color: coral;
 }
+
+/* Contact Page */
+
+#contact span{
+    color: coral;
+}
