@@ -103,7 +103,7 @@
 
         <?php include('E-shop/server/get_featured_products.php'); ?>
 
-        <?php while($row=$featured_products->fetch_assoc()){ ?>
+        <?php foreach($featured_products as $row){ ?>
 
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img src="E-shop/assets/images/featured/<?php echo $row['product_image'] ?>" class="img-fluid mb-3" alt="FOTO">
@@ -116,7 +116,7 @@
             </div>
             <h4 class="p-name"><?php echo $row['product_name'] ?></h4>
             <!-- <span>LIMITED EDITION<?php ?></span> -->
-            <h4 class="p-price">455.95$<?php echo $row['product-price'] ?></h4>
+            <h4 class="p-price"><?php echo $row['product_price'] ?>$</h4>
             <button class="buy-btn">Buy Now</button>
           </div>
           
