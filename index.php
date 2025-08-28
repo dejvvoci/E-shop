@@ -117,7 +117,7 @@
             <h4 class="p-name"><?php echo $row['product_name'] ?></h4>
             <!-- <span>LIMITED EDITION<?php ?></span> -->
             <h4 class="p-price"><?php echo $row['product_price'] ?>$</h4>
-            <button class="buy-btn">Buy Now</button>
+            <a href="<?php echo "product.php?product_id=". $row['product_id'];?>"><button class="buy-btn">Buy Now</button></a>
           </div>
           
           <?php } ?>
