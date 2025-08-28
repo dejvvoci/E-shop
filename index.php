@@ -147,8 +147,12 @@
           <p>Here you can <span class="fw-bold">check out</span> coolest old football kits</p>
         </div>
         <div class="row mx-auto container-fluid">
-          <div class="retro-kit text-center col-lg-4 col-md-4 col-sm-12">
-            <img src="E-shop/assets/images/retro/retro1.png" class="img-fluid mb-3" alt="FOTO">
+<?php include('E-shop/server/get_retro_kits.php'); ?>
+
+        <?php foreach($retro_kits as $row){ ?>
+
+          <div class="product text-center col-lg-4 col-md-4 col-sm-12">
+            <img src="E-shop/assets/images/retro/<?php echo $row['product_image'] ?>" class="img-fluid mb-3" alt="FOTO">
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -156,39 +160,14 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <h4 class="p-name">INTER MILAN 2002</h4>
-            <span>ADRIANO IMPERADOR</span>
-            <h4 class="p-price">455.95$</h4>
+            <h4 class="p-name"><?php echo $row['product_name'] ?></h4>
+            <!-- <span>LIMITED EDITION<?php ?></span> -->
+            <h4 class="p-price"><?php echo $row['product_price'] ?>$</h4>
             <button class="buy-btn">Buy Now</button>
           </div>
-          <div class="retro-kit text-center col-lg-4 col-md-4 col-sm-12">
-            <img src="E-shop/assets/images/retro/retro2.webp" class="img-fluid mb-3" alt="FOTO">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4 class="p-name">AC MILAN 2006</h4>
-            <span>UCL WINNERS</span>
-            <h4 class="p-price">455.95$</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
-          <div class="retro-kit text-center col-lg-4 col-md-4 col-sm-12">
-            <img src="E-shop/assets/images/retro/retro3.jpg" class="img-fluid mb-3" alt="FOTO">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4 class="p-name">FC BARCELONA 1999</h4>
-            <span>100 YEARS CLUB</span>
-            <h4 class="p-price">455.95$</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+          
+          <?php } ?>
+          
         </div>
       </section>
 
