@@ -11,6 +11,8 @@ if(isset($_POST['add_to_cart'])){
     // if this exact product has not already been added to the cart
     if(!in_array($_POST['product_id'] ,$products_array_ids)){
 
+      $product_id = $_POST['product_id'];
+
         $product_array = array(
           'product_id' => $_POST['product_id'],
           'product_name' => $_POST['product_name'],
@@ -44,8 +46,14 @@ if(isset($_POST['add_to_cart'])){
 
     $_SESSION['cart'][$product_id] = $product_array;
   }
+
+  // remove products form the cart
+} else if(isset($_POST['remove_product'])){
+  $product_id = $_POST['product_id'];
+  unset($_SESSION['cart'][$product_id]);
+
 }else{
-     echo '<script>console.log("SKA POST");</script>';
+     header('location: index.ph');
 }
 
 
@@ -117,12 +125,15 @@ if(isset($_POST['add_to_cart'])){
                 <p><?php echo $value['product_name']; ?></p>
                 <small><span>$</span><?php echo $value['product_price']; ?></small>
                 <br>
-                <a class="remve-button" href="#">Remove</a>
+                <form method="POST" action="cart.php">
+                  <input type="hidden" name="product_id" class="remve-button" value="<?php echo $value['product_id']; ?>">
+                  <input type="submit" name="remove_product" class="remove-button" value="Remove">
+                </form>
               </div>
             </div>
           </td>
           <td>
-            <input type="number" value="<?php echo $value['product_quantity']; ?>">
+            <input class="quantity_number" type="number" value="<?php echo $value['product_quantity']; ?>">
             <a class="edit-button" href="#">Edit</a>
           </td>
           <td>
