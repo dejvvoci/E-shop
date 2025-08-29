@@ -19,6 +19,8 @@ $stmt->close();
   header('location: index.php'); // no product id specified
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +72,8 @@ $stmt->close();
         <div class="row mt-5">
           
         <?php foreach($product as $row){ ?>
+
+          
             <div class="col-lg-5 col-md-6 col-sm-12">
                 <img id="main-image" class="img-fluid w-100 pb-1" src="E-shop/assets/images/featured/<?php echo $row['product_image'] ?>" alt="FOTO">
             <div class="small-image-group">
@@ -92,8 +96,14 @@ $stmt->close();
                 <h6>Men/Shoes</h6>
                 <h3 class="py-4"><?php echo $row['product_name'] ?></h3>
                 <h2><?php echo $row['product_price'] ?></h2>
-                <input type="number" value="1"/>
-                <button class="buy-btn">Add to Cart</button>
+                <form method="POST" action="cart.php">
+                  <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>"/>
+                  <input type="hidden" name="product_image" value="E-shop/assets/images/featured/<?php echo $row['product_image']; ?>"/>
+                  <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>"/>
+                  <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>"/>
+                  <input type="number" value="1" name="product_quantity"/>
+                  <button class="buy-btn" type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
 
                 <h4 class="mt-5 mb-5">Product details</h4>
                 <span><?php echo $row['product_description'] ?></span>

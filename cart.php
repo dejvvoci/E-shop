@@ -1,3 +1,56 @@
+<?php
+
+
+session_start();
+if(isset($_POST['add_to_cart'])){
+  if(isset($_SESSION['cart'])){
+    // if the user has already added products to the cart
+
+    $products_array_ids = array_column($_SESSION['cart'], 'product_id'); // array with all products ids
+    
+    // if this exact product has not already been added to the cart
+    if(!in_array($_POST['product_id'] ,$products_array_ids)){
+
+        $product_array = array(
+          'product_id' => $_POST['product_id'],
+          'product_name' => $_POST['product_name'],
+          'product_image' => $_POST['product_image'],
+          'product_price' => $_POST['product_price'],
+          'product_quantity' => $_POST['product_quantity'],
+        );
+
+        $_SESSION['cart'][$product_id] = $product_array;
+    }else{
+      echo '<script>alert("Product was already added  to the cart");</script>';
+    //  echo '<script>window.location="index.php";</script>';
+
+    }
+
+  }else{ 
+  // the first product of the cart
+    $product_id = $_POST['product_id'];
+    $product_name = $_POST['product_name'];
+    $product_image = $_POST['product_image'];
+    $product_price = $_POST['product_price'];
+    $product_quantity = $_POST['product_quantity'];
+
+    $product_array = array(
+      'product_id' => $product_id,
+      'product_name' => $product_name,
+      'product_image' => $product_image,
+      'product_price' => $product_price,
+      'product_quantity' => $product_quantity,
+    );
+
+    $_SESSION['cart'][$product_id] = $product_array;
+  }
+}else{
+     echo '<script>console.log("SKA POST");</script>';
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="">
   <head>
@@ -20,7 +73,7 @@
         <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="shop.html">Shop</a>
@@ -54,20 +107,22 @@
           <th>Quantity</th>
           <th>Price</th>
         </tr>
+        
+        <?php foreach($_SESSION['cart'] as $key => $value){ ?>
         <tr>
           <td>
             <div class="product-info">
-              <img src="E-shop/assets/images/featured/ball.webp" alt="">
+              <img src="<?php echo $value['product_image']; ?>" alt="">
               <div>
-                <p>Ball</p>
-                <small><span>$</span>150</small>
+                <p><?php echo $value['product_name']; ?></p>
+                <small><span>$</span><?php echo $value['product_price']; ?></small>
                 <br>
                 <a class="remve-button" href="#">Remove</a>
               </div>
             </div>
           </td>
           <td>
-            <input type="number" value="1">
+            <input type="number" value="<?php echo $value['product_quantity']; ?>">
             <a class="edit-button" href="#">Edit</a>
           </td>
           <td>
@@ -75,48 +130,8 @@
             <span class="product-price">150</span>
           </td>
         </tr>
-        <tr>
-          <td>
-            <div class="product-info">
-              <img src="E-shop/assets/images/featured/ball.webp" alt="">
-              <div>
-                <p>Ball</p>
-                <small><span>$</span>150</small>
-                <br>
-                <a class="remve-button" href="#">Remove</a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <input type="number" value="1">
-            <a class="edit-button" href="#">Edit</a>
-          </td>
-          <td>
-            <span>$</span>
-            <span class="product-price">150</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="product-info">
-              <img src="E-shop/assets/images/featured/ball.webp" alt="">
-              <div>
-                <p>Ball</p>
-                <small><span>$</span>150</small>
-                <br>
-                <a class="remve-button" href="#">Remove</a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <input type="number" value="1">
-            <a class="edit-button" href="#">Edit</a>
-          </td>
-          <td>
-            <span>$</span>
-            <span class="product-price">150</span>
-          </td>
-        </tr>
+        
+          <?php } ?>
       </table>
 
       <!-- Total table -->
